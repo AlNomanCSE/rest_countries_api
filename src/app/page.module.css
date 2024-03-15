@@ -1,0 +1,58 @@
+.searchSection {
+  padding: 2rem 4rem;
+  display: flex;
+  justify-content: space-between;
+}
+.searchSection div {
+  position: relative;
+}
+.icon {
+  position: absolute;
+  top: 50%;
+  left: 10%;
+  transform: translate(-50%,-50%);
+}
+.searchSection > div > input {
+  width: 300px;
+  padding: .5rem 3rem;
+  border-radius: 5px;
+  border: none;
+  box-shadow: 1px 0px 5px rgb(209, 208, 208);
+  outline: none;
+}
+
+.searchSection select {
+  width: 200px;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  border: none;
+  box-shadow: 2px 1px 1px rgb(209, 208, 208);
+}
+.cardSection {
+  padding: 4rem;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+}
+.card {
+  width: 100%;
+  border-radius: 5px;
+  overflow: hidden;
+  box-shadow: 1px 0px 5px rgb(209, 208, 208);
+}
+.cardImage {
+  width: 100%;
+  object-fit: cover;
+}
+.card h2 {
+  margin: 1rem 0;
+}
+.cardDetails {
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.cardDetails p > span {
+  font-weight: 500;
+}

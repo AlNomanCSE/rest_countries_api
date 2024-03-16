@@ -31,6 +31,7 @@ const Card = ({ datas }) => {
           <option value="Africa">Africa</option>
           <option value="America">America</option>
           <option value="Asia">Asia</option>
+          <option value="Europe">Europe</option>
           <option value="Ocenia">Ocenia</option>
         </select>
       </div>
@@ -47,7 +48,7 @@ const Card = ({ datas }) => {
             <Link href={`/${data.name}`} key={index}>
               <div className={styles.card}>
                 <Image
-                  src={data.flags.svg||data.flags.png}
+                  src={data.flags.svg || data.flags.png}
                   alt="country image"
                   width={200}
                   height={200}

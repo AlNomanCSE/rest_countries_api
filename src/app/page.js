@@ -16,7 +16,7 @@ const datas = JSON.parse(jsonData);
 export default async function Home() {
   return (
     <main className={styles.main}>
-        <Card datas={datas} />  
+      <Card datas={datas} />
     </main>
   );
 }

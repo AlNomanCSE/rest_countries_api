@@ -10,11 +10,11 @@
   position: absolute;
   top: 50%;
   left: 10%;
-  transform: translate(-50%,-50%);
+  transform: translate(-50%, -50%);
 }
 .searchSection > div > input {
   width: 300px;
-  padding: .5rem 3rem;
+  padding: 0.5rem 3rem;
   border-radius: 5px;
   border: none;
   box-shadow: 1px 0px 5px rgb(209, 208, 208);
@@ -38,7 +38,7 @@
   width: 100%;
   border-radius: 5px;
   overflow: hidden;
-  box-shadow: 1px 0px 5px rgb(209, 208, 208);
+  box-shadow: 3px 3px 10px rgb(209, 208, 208);
 }
 .cardImage {
   width: 100%;
@@ -55,4 +55,51 @@
 }
 .cardDetails p > span {
   font-weight: 500;
+}
+
+@media screen and (max-width: 1350px) {
+  .cardSection {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+@media screen and (max-width: 992px) {
+  .cardSection {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media screen and (max-width: 768px) {
+  .searchSection {
+    flex-direction: column;
+    gap: 1rem;
+    padding: 1rem;
+  }
+  .searchSection div input {
+    width: 100%;
+  }
+  .cardSection {
+    grid-template-columns: 1fr;
+    padding: 1rem;
+  }
+  .card {
+    max-width: 400px;
+    margin: 0 auto;
+  }
+  .cardDetails {
+    padding: 1rem 2rem;
+  }
+  .card h2 {
+    margin: 0.5rem 0;
+  }
+}
+.backBtn {
+  padding: 2rem;
+}
+.backBtn button {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.7rem 1rem;
+  border: none;
+  box-shadow: 5px 5px 5px rgb(209, 208, 208);
+  cursor: pointer;
 }

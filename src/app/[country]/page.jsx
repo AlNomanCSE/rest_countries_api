@@ -14,10 +14,13 @@ const filePath = path.resolve("./data.json");
 const jsonData = fs.readFileSync(filePath, "utf8");
 
 // Parse the JSON data into a JavaScript object
+
 const datas = JSON.parse(jsonData);
 const page = ({ params }) => {
-  const [Country] = datas.filter((data) => data.name === params.country);
-
+  const [Country] = datas.filter((data) => {
+    return data.name == decodeURIComponent(params.country);
+  });
+  console.log(Country);
   return (
     <>
       <div className={styles.backBtn}>
@@ -40,7 +43,6 @@ const page = ({ params }) => {
           className={styles.cardImage}
         />
         <div className={styles.cardDetails}>
-          <h2>{Country.name}</h2>
           <p>
             <span>Native Name </span>: {Country.nativeName}
           </p>
@@ -66,12 +68,10 @@ const page = ({ params }) => {
             <p>
               <span>Language </span>:{[Country.languages[0].name]}
             </p>
-            {/* <p>
-              <span>Border Countries :</span>
-              {Country.borders.forEach((element) => (
-                <h1>{element}</h1>
-              ))}
-            </p> */}
+            <p>
+              <span>Bordrer Country </span>:{" "}
+              {Country.borders ? Country.borders.join("  ") : "NAN"}
+            </p>
           </div>
         </div>
       </div>

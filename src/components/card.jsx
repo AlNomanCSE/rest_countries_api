@@ -4,6 +4,7 @@ import Link from "next/link";
 import styles from "../app/page.module.css";
 import Image from "next/image";
 import { IoSearchSharp } from "react-icons/io5";
+
 const Card = ({ datas }) => {
   const [countyName, setCountryName] = useState("");
 
@@ -32,7 +33,7 @@ const Card = ({ datas }) => {
           <option value="America">America</option>
           <option value="Asia">Asia</option>
           <option value="Europe">Europe</option>
-          <option value="Ocenia">Ocenia</option>
+          <option value="Oceania">Ocenia</option>
         </select>
       </div>
 

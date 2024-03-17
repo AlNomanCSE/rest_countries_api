@@ -20,7 +20,6 @@ const page = ({ params }) => {
   const [Country] = datas.filter((data) => {
     return data.name == decodeURIComponent(params.country);
   });
-  console.log(Country);
   return (
     <>
       <div className={styles.backBtn}>
@@ -63,10 +62,10 @@ const page = ({ params }) => {
               <span>Top Level Domain </span>:{Country.topLevelDomain}
             </p>
             <p>
-              <span>Currency </span>:{[Country.currencies[0].name]}
+              <span>Currency </span>:{Country.currencies[0].name}
             </p>
             <p>
-              <span>Language </span>:{[Country.languages[0].name]}
+              <span>Language </span>:{Country.languages[0].name}
             </p>
             <p>
               <span>Bordrer Country </span>:{" "}

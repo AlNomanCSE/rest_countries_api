@@ -1,5 +1,5 @@
-import styles from "../../app/page.module.css";
 import { FaArrowLeft } from "react-icons/fa";
+import styles from "../../app/page.module.css"
 import Image from "next/image";
 import React from "react";
 import fs from "fs";
@@ -21,60 +21,100 @@ const page = ({ params }) => {
     return data.name == decodeURIComponent(params.country);
   });
   return (
-    <>
-      <div className={styles.backBtn}>
+    <section style={{ width: "100%" }}>
+      <div style={{ padding: "2rem" }}>
         <Link href="/">
-          <button>
+          <button
+            style={{
+              display: "flex",
+              alignItems: "center",
+              gap: "0.5rem",
+              padding: "0.7rem 1rem",
+              border: "none",
+              boxShadow: "5px 5px 5px rgb(209, 208, 208)",
+              cursor: "pointer",
+            }}
+          >
             <FaArrowLeft />
             Back
           </button>
         </Link>
       </div>
       <div
-        className={styles.card}
-        style={{ maxWidth: "500px", margin: "0 auto" }}
+        style={{
+          maxWidth: "90%",
+          margin: "0 auto",
+          display: "flex",
+          margin: "0 auto",
+          overflow: "hidden",
+          boxShadow: "3px 3px 10px rgb(209, 208, 208)",
+          borderRadius: "5px",
+        }}
+        className={styles.slagSection}
       >
         <Image
           src={Country.flags.svg}
           alt="country image"
           width={200}
           height={200}
-          className={styles.cardImage}
+          style={{
+            objectFit: "cover",
+            maxHeight: "550px",
+            width: "60%",
+            height: "100%",
+            padding: "2rem",
+          }}
+          className={styles.slagSectionImg}
         />
-        <div className={styles.cardDetails}>
+        <div
+          style={{
+            display: "flex",
+            flexDirection: "column",
+            gap: ".5rem",
+            margin: "auto",
+          }}
+        >
+          <h2>{Country.name}</h2>
           <p>
-            <span>Native Name </span>: {Country.nativeName}
+            <span style={{ fontWeight: "600" }}>Native Name</span>:{" "}
+            {Country.nativeName}
           </p>
           <p>
-            <span>Population </span>: {Country.population}
+            <span style={{ fontWeight: "600" }}>Population</span>:{" "}
+            {Country.population}
           </p>
           <p>
-            <span>Region </span>:{Country.region}
+            <span style={{ fontWeight: "600" }}>Region</span>: {Country.region}
           </p>
           <p>
-            <span>Sub Region </span>:{Country.subregion}
+            <span style={{ fontWeight: "600" }}>Sub Region</span>:{" "}
+            {Country.subregion}
           </p>
           <p>
-            <span>Capital </span>:{Country.capital}
+            <span style={{ fontWeight: "600" }}>Capital</span>:{" "}
+            {Country.capital}
           </p>
           <div>
             <p>
-              <span>Top Level Domain </span>:{Country.topLevelDomain}
+              <span style={{ fontWeight: "600" }}>Top Level Domain</span>:{" "}
+              {Country.topLevelDomain}
             </p>
             <p>
-              <span>Currency </span>:{Country.currencies[0].name}
+              <span style={{ fontWeight: "600" }}>Currency</span>:{" "}
+              {Country.currencies[0].name}
             </p>
             <p>
-              <span>Language </span>:{Country.languages[0].name}
+              <span style={{ fontWeight: "600" }}>Language</span>:{" "}
+              {Country.languages[0].name}
             </p>
             <p>
-              <span>Bordrer Country </span>:{" "}
+              <span style={{ fontWeight: "600" }}>Bordrer Country</span>:{" "}
               {Country.borders ? Country.borders.join("  ") : "NAN"}
             </p>
           </div>
         </div>
       </div>
-    </>
+    </section>
   );
 };
 

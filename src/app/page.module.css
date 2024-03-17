@@ -73,6 +73,17 @@
   .cardSection {
     grid-template-columns: repeat(2, 1fr);
   }
+  .slagSection {
+    flex-direction: column;
+    padding-bottom: 2rem;
+    align-items: center;
+  }
+  .slagSectionImg {
+    min-width: 310px;
+  }
+  .slagSection > div {
+    padding: 3rem 0ox;
+  }
 }
 @media screen and (max-width: 768px) {
   .searchSection {
@@ -97,16 +108,4 @@
   .card h2 {
     margin: 0.5rem 0;
   }
-}
-.backBtn {
-  padding: 2rem;
-}
-.backBtn button {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  padding: 0.7rem 1rem;
-  border: none;
-  box-shadow: 5px 5px 5px rgb(209, 208, 208);
-  cursor: pointer;
 }
